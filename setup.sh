@@ -26,15 +26,19 @@ sudo yum -y install python36u python36u-pip python36u-devel tmux2u
 pip3.6 install --user virtualenv
 virtualenv ~/dib-virtualenv
 source ~/dib-virtualenv/bin/activate
+tmux
 
 # Clone these repos
 git clone https://git.openstack.org/openstack/magnum
 
-git clone https://github.com/brtknr/magnum.git
+git clone -b fedora-atomic https://github.com/brtknr/magnum.git 
 git clone https://git.openstack.org/openstack/dib-utils.git
 git clone https://git.openstack.org/openstack/diskimage-builder
 
-pushd magnum && git fetch https://git.openstack.org/openstack/magnum refs/changes/13/476513/1 && popd
+pushd diskimage-builder && pip install -e . && popd
+
+# The following magnum patch to make dracut-regenerate work has been applied to fedora-atomic branch of brtknr/magnum
+# pushd magnum && git fetch https://git.openstack.org/openstack/magnum refs/changes/13/476513/1 && popd
 
 export PATH="${PWD}/dib-utils/bin:$PATH"
 export DIB_RELEASE=27
@@ -46,10 +50,10 @@ export DIB_IMAGE_SIZE=2.5
 export DIB_BAREMETAL_KERNEL_PATTERN='ostree/fedora-atomic-*/vmlinuz*'
 export DIB_BAREMETAL_INITRD_PATTERN='ostree/fedora-atomic-*/initramfs-*'
 
-
+# This is not currently being used
 export ELEMENTS_PATH=$(python -c 'import os, diskimage_builder, pkg_resources;print(os.path.abspath(pkg_resources.resource_filename(diskimage_builder.__name__, "elements")))')
 
-
+# Overriding venv path with cloned diskimage-builder path
 export ELEMENTS_PATH="${PWD}/diskimage-builder/diskimage_builder/elements"
 export ELEMENTS_PATH="${ELEMENTS_PATH}:${PWD}/magnum/magnum/drivers/common/image"
 
