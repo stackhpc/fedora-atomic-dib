@@ -1,1 +1,1 @@
-See [setup.sh][setup.sh].
+See [setup.sh](setup.sh).
