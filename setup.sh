@@ -31,7 +31,7 @@ rsync -rp ${PWD}/diskimage-builder/diskimage_builder/elements/fedora-atomic/ ${P
 
 export PATH="${PWD}/dib-utils/bin:$PATH"
 export DIB_RELEASE=${DIB_RELEASE}
-export DIB_IMAGE_SIZE=2.5
+export DIB_IMAGE_SIZE=3.0
 
 # Without these the select-initrd-kernel-image element fails as the
 # fedora-atomic ramdisk and kernel are not in /boot. This element is a dependency

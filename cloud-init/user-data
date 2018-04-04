@@ -1,0 +1,6 @@
+#cloud-config
+password: redhat
+chpasswd: { expire: False }
+ssh_pwauth: True 
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC6zhRqvv2YnLEzRsxaRn/GgzDy4DOaZW9+zNEE5zBtaVnXe90S1hIMke2VNL58CVMrBgXpdx1f+KuDBvc3dVqDrDxpC+BLL5X/9l4en4a6CUs+GhZMcCDfpKKPX57V5q1eKs3cD9zMp3nnXqaMA+HIs2CQxNnm7JjakgueT7CDhV5xcEWLKnnUqDPs1W8E1STIXRpWDExoFUoEa5WaP21fhg/cIUXZPBCRk31TBVwMnpqmqhZ5ajriXUCKcXT9iRrdsMKlr4t/zQVek6GMxlj+dZxuFhnoeCBcoki7Jh3+EkjW6FbZd1aQrkkk54jAUyUpNPc/fNJvurHtVUjTYEX centos@k8s-2.novalocal
