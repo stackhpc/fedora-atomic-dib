@@ -2,14 +2,14 @@
 
 To build the image:
 
-	INSTALL_DEPS=1 DIB_RELEASE=27 ./fedora_atomic_dib/[setup.sh](setup.sh)
+	INSTALL_DEPS=1 DIB_RELEASE=27 ./fedora_atomic_dib/setup.sh
 
 `INSTALL DEPS=1` installs all the required packages to run diskimage-builder. It is only necessary to include it the first time.
 
 To boot into the image:
 
-	./fedora-atomic-dib/[gencloudinitiso.sh](gencloudinitiso.sh)
-	DIB_RELEASE=27 sudo -E ./fedora-atomic-dib/[qemu.sh](qemu.sh)
+	./fedora-atomic-dib/gencloudinitiso.sh
+	DIB_RELEASE=27 sudo -E ./fedora-atomic-dib/qemu.sh
 
 # Goal:
 - building Fedora Atomic 27 image
