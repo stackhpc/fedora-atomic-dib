@@ -12,8 +12,6 @@ if [ INSTALL_DEPS == 1 ]; then
 
 	# Clone these repos
 	git clone https://git.openstack.org/openstack/magnum
-
-	git clone -b fedora-atomic https://github.com/brtknr/magnum.git 
 	git clone https://git.openstack.org/openstack/dib-utils.git
 	git clone https://git.openstack.org/openstack/diskimage-builder
 
